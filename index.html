@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Course Tracking System{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container">
+        <h1>Welcome to Course Tracking System</h1>
+        <p>A platform for students to learn and administrators to manage courses efficiently.</p>
+        <button id="getStartedBtn" class="btn btn-light btn-lg">Get Started</button>
+    </div>
+</div>
+
+<div class="container">
+    <div id="roleSelector" class="role-selector" style="display: none;">
+        <div class="card role-card" onclick="redirectTo('student/login')">
+            <div class="card-body">
+                <div class="role-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h4>Student</h4>
+                <p>Access courses and quizzes</p>
+            </div>
+        </div>
+        
+        <div class="card role-card" onclick="redirectTo('admin/login')">
+            <div class="card-body">
+                <div class="role-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h4>Admin</h4>
+                <p>Manage courses and students</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="fas fa-book fa-3x mb-3 text-primary"></i>
+                    <h4>Wide Range of Courses</h4>
+                    <p>Access a variety of courses including Machine Learning, Python, Java, React, and Cloud Computing.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="fas fa-laptop-code fa-3x mb-3 text-primary"></i>
+                    <h4>Interactive Learning</h4>
+                    <p>Engage with course content and test your knowledge with quizzes designed for effective learning.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
+                    <h4>Track Your Progress</h4>
+                    <p>Monitor your learning journey with detailed progress reports and quiz scores.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const getStartedBtn = document.getElementById('getStartedBtn');
+        const roleSelector = document.getElementById('roleSelector');
+        
+        getStartedBtn.addEventListener('click', function() {
+            roleSelector.style.display = 'flex';
+            // Scroll to the role selector
+            roleSelector.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+    
+    function redirectTo(path) {
+        window.location.href = path;
+    }
+</script>
+{% endblock %} 
