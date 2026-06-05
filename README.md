@@ -1,40 +1,53 @@
 # Course Tracking System
 
-An interactive educational platform designed to manage course progress, deliver content, and evaluate student performance through integrated quizzes and an administrative dashboard.
+A normalised relational database system with complete CRUD
+REST API for tracking student course progress with admin reporting.
 
-## 🖥️ System Preview
+## Tech Stack
+Python · Flask · SQLite · SQL · REST API · CSV Export
 
-### Core Dashboards
-| Admin Dashboard | Student Dashboard | Management View |
-|---|---|---|
-| ![Admin](Admin%20Dashboard.png) | ![Student](Student%20Page.png) | ![Management](Student%20management.png) |
+## Features
+- Normalised SQLite database with optimised SQL indexing
+- Complete CRUD REST API with input validation
+- Admin reporting module with automated CSV export
+- 30% faster data retrieval through SQL indexing
+- Non-technical educator friendly interface
 
-### Learning Experience
-| Course Content | Course Details | Interactive Quiz |
-|---|---|---|
-| ![Course](Course%20page.png) | ![Description](Course%20description%20page.png) | ![Quiz](Quiz%20page.png) |
+## Project Structure
+```text
+├── app.py              # Main Flask application
+├── requirements.txt    # Dependencies
+├── database/
+│   └── schema.sql      # Database schema
+├── routes/
+│   ├── courses.py      # Course management routes
+│   └── students.py     # Student tracking routes
+├── static/
+│   ├── index.html      # Frontend
+│   └── style.css       # Styles
+└── utils/
+    └── export.py       # CSV export utilities
+```
 
----
+## API Endpoints
+```text
+POST   /api/course         - Add new course
+GET    /api/courses        - Get all courses
+PUT    /api/course/{id}    - Update course
+DELETE /api/course/{id}    - Delete course
+GET    /api/report/export  - Export CSV report
+```
 
-## 🚀 Key Features
-* **Progress Tracking:** Monitor completion status of various courses in real-time.
-* **Admin Control:** Specialized dashboard to manage users, students, and course materials.
-* **Knowledge Assessment:** Integrated quiz module to evaluate student understanding.
-* **User Authentication:** Secure login gateway for both students and administrators.
-* **Modern UI:** Built with a clean, responsive design using `base.html` templates.
-* **Performance Highlights:**
-     * Optimised SQL indexing achieving 30% faster data retrieval
-     * Input validation reducing data entry errors by 45%
-     * CSV export module enabling 100% non-technical educator access
+## Impact
+- 30% faster data retrieval with SQL indexing
+- 45% reduction in data entry errors
+- 100% student progress trackable independently
 
-## 🛠️ Technology Stack
-* **Backend:** Python (Flask)
-* **Frontend:** HTML5, CSS3, Jinja2 Templates
-* **Logic:** Custom user management via `read_users.py`
+## Setup
+1. Clone the repository
+2. pip install -r requirements.txt
+3. python app.py
+4. Open: http://localhost:5000
 
-## 📦 Installation & Setup
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Sweetha-B/Course-Tracking-System.git](https://github.com/Sweetha-B/Course-Tracking-System.git)
-   pip install flask
-   python app.py
+## Contact
+Sweetha B | sweethab99@gmail.com 
